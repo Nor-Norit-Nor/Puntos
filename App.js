@@ -14,7 +14,9 @@ const handleLongPress = ({nativeEvent})=> {
     <View style={styles.container}>
       <Map onLongPress={handleLongPress}/>
       <Panel />
-      <Modal/>
+      <Modal visibility={true}>
+    <Text>Hola</Text>
+      </Modal>
 
       <StatusBar style="auto" />
     </View>
