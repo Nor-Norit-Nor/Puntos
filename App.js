@@ -39,7 +39,7 @@ const handleLongPress = ({nativeEvent})=> {
   }
   return (
     <View style={styles.container}>
-      <Map onLongPress={handleLongPress}/>
+      <Map onLongPress={handleLongPress} puntos={puntos}/>
       <Panel onPressLeft={handleLista} textLeft='Lista'/>
       <Modal visibility={visibility}>
     {visibilityFilter === 'new_punto' 
