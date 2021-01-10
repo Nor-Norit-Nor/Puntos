@@ -9,8 +9,9 @@ const [nombre, setNombre] = useState("")
 const [puntoTemp, setPuntoTemp] = useState({})
 const [visibility, setVisibility] = useState(false)
 const [visibilityFilter, setVisibilityFilter] = useState("new_punto")
+const [pointsFilter, setPointsFilter] = useState(true)
 
-
+const tooglePointsFilter = ()=> setPointsFilter(!pointsFilter)
 
 
 const handleLongPress = ({nativeEvent})=> {
@@ -39,8 +40,8 @@ const handleLongPress = ({nativeEvent})=> {
   }
   return (
     <View style={styles.container}>
-      <Map onLongPress={handleLongPress} puntos={puntos}/>
-      <Panel onPressLeft={handleLista} textLeft='Lista'/>
+      <Map onLongPress={handleLongPress} puntos={puntos} pointsFilter={pointsFilter}/>
+      <Panel onPressLeft={handleLista} textLeft='Lista' tooglePointsFilter={tooglePointsFilter}/>
       <Modal visibility={visibility}>
     {visibilityFilter === 'new_punto' 
     ? 
